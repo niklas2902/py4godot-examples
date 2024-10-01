@@ -1,8 +1,8 @@
 # Project
 The aim of this project is to create height maps in Python and then later show them in godot
 
-##Installation
-##Windows
+## Installation
+### Windows
 First clone this repository.
 Then open the project in Godot and in the AssetLib download "Python for Godot"
 ![grafik](https://github.com/user-attachments/assets/f3db74df-ec6c-49e6-9287-b79541b93178)
