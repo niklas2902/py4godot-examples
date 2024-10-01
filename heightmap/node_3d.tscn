@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvrh523nkoaku"]
+
+[ext_resource type="Script" path="res://HeightMapGenerator.py" id="2_dcqrp"]
+[ext_resource type="Script" path="res://height_map_creator.gd" id="2_tvmul"]
+
+[node name="Node3D" type="Node3D"]
+script = 0
+
+[node name="HeightMapCreator" type="Node3D" parent="."]
+script = ExtResource("2_tvmul")
+
+[node name="Generator" type="Node3D" parent="HeightMapCreator"]
+editor_description = "jfejkkj fjkjak fjkkjl alkjkl fjklejklfjlkejkl kjlsjklfjkl431"
+transform = Transform3D(1, 0, 0, 0, 0.507812, 0, 0, 0, 1, 1.8019, 1.19343, 2.70217)
+script = ExtResource("2_dcqrp")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.785857, 0.618408, 0, -0.618408, 0.785857, 0, 7.74808, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.221036, 6.58746, 0)
+omni_range = 25.752
+omni_attenuation = 0.313
