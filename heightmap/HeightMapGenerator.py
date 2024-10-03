@@ -8,30 +8,6 @@ import numpy as np
 from py4godot.classes.Image.Image import Image as GDImage
 from py4godot.classes.core import Color
 
-
-def generate_height_map():
-
-	# Parameters
-	width, height = 512, 512
-	scale = 0.1
-
-	# Generate sinusoidal heightmap
-	x = np.linspace(0, width * scale, width)
-	y = np.linspace(0, height * scale, height)
-	X, Y = np.meshgrid(x, y)
-
-	heightmap = np.sin(X) * np.cos(Y)
-
-	# Normalize to [0, 1] range
-	heightmap = (heightmap - np.min(heightmap)) / (np.max(heightmap) - np.min(heightmap))
-
-	# Convert to 8-bit (0-255 range)
-	heightmap_8bit = (heightmap * 255).astype(np.uint8)
-
-	# Save using Pillow
-	img = Image.fromarray(heightmap_8bit)
-	img.save("heightmap_pillow.png")
-
 def create_sinusoidal_heightmap(width:int, height:int) -> np.ndarray:
 	scale = 0.1
 
