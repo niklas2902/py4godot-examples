@@ -101,7 +101,7 @@ def download_and_extract_latest_release(repo_owner, repo_name, download_dir=".")
 
 
 def init_projects():
-    projects = ["dodge_the_creeps", "heightmap", "button_demo", "python-class-instantiation"]
+    projects = ["dodge_the_creeps", "heightmap", "button_demo", "python-class-instantiation", "godot-pytorch", "truck-town"]
     for project in projects:
         print((f"Copying py4godot into {project}..."))
         copy_py4godot(project)
@@ -126,6 +126,7 @@ def install_requirements(path):
             "-m", "pip", "install", "-r", f"{path}/requirements.txt"
         ])
     elif platform.system() == "Linux":
+        os.chmod(f"{path}/addons/py4godot/cpython-{PYTHON_VERSION}-linux64/python/bin/python3", 0o777)
         run_command_and_print([f"{path}/addons/py4godot/cpython-{PYTHON_VERSION}-linux64/python/bin/python3", f"{path}/addons/py4godot/get_pip.py"])
         run_command_and_print([
             f"{path}/addons/py4godot/cpython-{PYTHON_VERSION}-linux64/python/bin/python3",
