@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqu52qctre1cj"]
+[gd_scene load_steps=9 format=3 uid="uid://cqu52qctre1cj"]
 
-[ext_resource type="Script" path="res://godot_scripts/mob.gd" id="1_h80cs"]
 [ext_resource type="Texture2D" uid="uid://yqglrrsx7j1f" path="res://art/enemyFlyingAlt_1.png" id="2_1i2hn"]
 [ext_resource type="Texture2D" uid="uid://bpot8awhdn6ph" path="res://art/enemyFlyingAlt_2.png" id="3_rkbfo"]
 [ext_resource type="Texture2D" uid="uid://5lvm88ij4jqn" path="res://art/enemySwimming_1.png" id="4_fkuty"]
@@ -51,7 +50,6 @@ height = 100.0
 [node name="Mob" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource("1_h80cs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.75, 0.75)

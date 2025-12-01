@@ -5,7 +5,6 @@ from py4godot.classes import gdclass
 from py4godot.classes.Node import Node
 from py4godot.classes.ResourceLoader import ResourceLoader
 from py4godot.classes.core import Vector2
-from py4godot.utils.utils import get_tree
 
 
 def load_mob_scene(path):
@@ -40,7 +39,7 @@ class main(Node):
 		self._death_sound.play()
 
 	def new_game(self):
-		get_tree(self).call_group("mobs", "queue_free")
+		self.get_tree().call_group("mobs", "queue_free")
 		self.score = 0
 		self._player.start(self._start_position.position)
 		self._start_timer.start()
