@@ -81,4 +81,3 @@ class evaluator(Node2D):
 
 		results = model.evaluate_custom_image(processed_img)
 		return results[0]
-

@@ -1,7 +1,6 @@
 from py4godot import signal
 from py4godot.classes import gdclass
 from py4godot.classes.CanvasLayer import CanvasLayer
-from py4godot.utils.utils import get_tree
 
 
 @gdclass
@@ -25,7 +24,7 @@ class hud(CanvasLayer):
 		message_label = self.get_node("MessageLabel")
 		message_label.text = "Dodge the\nCreeps"
 		message_label.show()
-		get_tree(self).create_timer(1).timeout.connect(self.show_start_button)
+		self.get_tree().create_timer(1).timeout.connect(self.show_start_button)
 		self.get_node("MessageTimer").timeout.disconnect(self.show_title)
 
 	def show_start_button(self):
