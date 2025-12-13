@@ -101,7 +101,8 @@ def download_and_extract_latest_release(repo_owner, repo_name, download_dir=".")
 
 
 def init_projects():
-    projects = ["dodge_the_creeps", "heightmap", "button_demo", "python-class-instantiation", "godot-pytorch", "truck_town", "godot-python-interaction"]
+    projects = ["dodge_the_creeps", "heightmap", "button_demo", "python-class-instantiation", "godot-pytorch",
+                "truck_town", "godot-python-interaction", "platformer"]
     for project in projects:
         print((f"Copying py4godot into {project}..."))
         copy_py4godot(project)

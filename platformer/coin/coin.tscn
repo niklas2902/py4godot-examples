@@ -1,0 +1,310 @@
+[gd_scene load_steps=19 format=3 uid="uid://dx000heks00a4"]
+
+[ext_resource type="Script" path="res://coin/coin.py" id="1_gbvlv"]
+[ext_resource type="AudioStream" uid="uid://bfv4s1m7io5gv" path="res://coin/sound_coin.wav" id="2"]
+[ext_resource type="Material" uid="uid://cbwaw7tk7x7pq" path="res://coin/coin_material.tres" id="2_n0rbc"]
+[ext_resource type="Texture2D" uid="uid://bo45lucn4nll1" path="res://particle.webp" id="3"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fpglg"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.05
+radial_segments = 16
+rings = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_kqa4x"]
+
+[sub_resource type="Gradient" id="Gradient_cd1ha"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.642276, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.180392, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qhu5r"]
+gradient = SubResource("Gradient_cd1ha")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7q0mq"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 0.858824, 0.572549, 0.25098)
+albedo_texture = SubResource("GradientTexture2D_qhu5r")
+billboard_mode = 1
+proximity_fade_enabled = true
+proximity_fade_distance = 0.15
+
+[sub_resource type="Animation" id="Animation_r4jod"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Circle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GlowSprite:transparency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlowSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "spin"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 6.28319, 0), Vector3(1.5708, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Circle:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "take"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GlowSprite:transparency")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GlowSprite:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7v453"]
+_data = {
+&"RESET": SubResource("Animation_r4jod"),
+&"spin": SubResource("3"),
+&"take": SubResource("4")
+}
+
+[sub_resource type="SphereShape3D" id="5"]
+radius = 0.375
+
+[sub_resource type="StandardMaterial3D" id="6"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(1, 1, 0.759137, 1)
+albedo_texture = ExtResource("3")
+texture_filter = 4
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+proximity_fade_distance = 0.5
+
+[sub_resource type="PlaneMesh" id="7"]
+material = SubResource("6")
+size = Vector2(0.25, 0.25)
+orientation = 2
+
+[sub_resource type="Curve" id="Curve_b7uxi"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.101562, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="8"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Coin" type="Area3D"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_edit_mode = 0
+rotation_order = 2
+top_level = false
+visible = true
+visibility_parent = NodePath("")
+disable_mode = 0
+collision_layer = 1
+collision_mask = 1
+collision_priority = 1.0
+input_ray_pickable = false
+input_capture_on_drag = false
+monitoring = true
+monitorable = true
+priority = 0
+gravity_space_override = 0
+gravity_point = false
+gravity_point_unit_distance = 0.0
+gravity_point_center = Vector3(0, -1, 0)
+gravity_direction = Vector3(0, -1, 0)
+gravity = 9.8
+linear_damp_space_override = 0
+linear_damp = 0.1
+angular_damp_space_override = 0
+angular_damp = 0.1
+wind_force_magnitude = 0.0
+wind_attenuation_factor = 0.0
+wind_source_path = NodePath("")
+audio_bus_override = false
+audio_bus_name = &"Master"
+reverb_bus_enabled = false
+reverb_bus_name = &"Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+script = ExtResource("1_gbvlv")
+
+[node name="Circle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -3.6199901e-06, -1, 0, 1, -3.6199901e-06, 0.00550658, 0.532125, 0.000651598)
+layers = 2
+mesh = SubResource("CylinderMesh_fpglg")
+surface_material_override/0 = ExtResource("2_n0rbc")
+
+[node name="GlowSprite" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visibility_range_begin = 3.0
+visibility_range_begin_margin = 3.0
+visibility_range_fade_mode = 1
+mesh = SubResource("QuadMesh_kqa4x")
+surface_material_override/0 = SubResource("StandardMaterial3D_7q0mq")
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7v453")
+}
+autoplay = "spin"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00894194, 0.575859, 0.0193955)
+shape = SubResource("5")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000732422, 0.542954, 0)
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.2
+mesh = SubResource("7")
+emission_shape = 2
+emission_sphere_radius = 0.4
+direction = Vector3(0, 1, 0)
+spread = 25.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+scale_amount_curve = SubResource("Curve_b7uxi")
+color_ramp = SubResource("8")
+
+[connection signal="body_entered" from="." to="." method="_on_coin_body_enter"]

@@ -1,0 +1,223 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0b3a84nshig7"]
+
+[ext_resource type="Script" path="res://player/bullet/bullet.py" id="1_txs3d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7q83"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(0.701961, 0.698039, 0.513726, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_gjrxu"]
+material = SubResource("StandardMaterial3D_p7q83")
+radius = 0.25
+height = 0.5
+radial_segments = 16
+rings = 8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aw6a5"]
+albedo_color = Color(0.7, 0.7, 0.7, 1)
+metallic = 0.1
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 0.884824, 0.513098, 1)
+emission_energy_multiplier = 3.71
+
+[sub_resource type="Animation" id="Animation_vsjh6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sphere:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:omni_range")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.0]
+}
+
+[sub_resource type="Animation" id="Animation_i372c"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sphere:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CPUParticles3D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sphere:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OmniLight3D:omni_range")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [5.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pyoek"]
+_data = {
+&"RESET": SubResource("Animation_vsjh6"),
+&"life": SubResource("Animation_i372c")
+}
+
+[sub_resource type="SphereMesh" id="SphereMesh_hnt4a"]
+material = SubResource("StandardMaterial3D_p7q83")
+radius = 0.125
+height = 0.25
+radial_segments = 16
+rings = 8
+
+[sub_resource type="Curve" id="Curve_4e8sm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ic2ol"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vq2ey"]
+radius = 0.27
+
+[node name="Bullet" type="RigidBody3D"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_edit_mode = 0
+rotation_order = 2
+top_level = false
+visible = true
+visibility_parent = NodePath("")
+disable_mode = 0
+collision_layer = 1
+collision_mask = 1
+collision_priority = 1.0
+input_ray_pickable = true
+input_capture_on_drag = false
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+mass = 0.4
+gravity_scale = 1.0
+center_of_mass_mode = 0
+center_of_mass = Vector3(0, 0, 0)
+inertia = Vector3(0, 0, 0)
+sleeping = false
+can_sleep = true
+lock_rotation = false
+freeze = false
+freeze_mode = 0
+custom_integrator = false
+continuous_cd = false
+contact_monitor = false
+max_contacts_reported = 0
+linear_velocity = Vector3(0, 0, 0)
+linear_damp_mode = 0
+linear_damp = 0.0
+angular_velocity = Vector3(0, 0, 0)
+angular_damp_mode = 0
+angular_damp = 0.0
+constant_force = Vector3(0, 0, 0)
+constant_torque = Vector3(0, 0, 0)
+script = ExtResource("1_txs3d")
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00159812, 0.0110106, 0.0045104)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_gjrxu")
+surface_material_override/0 = SubResource("StandardMaterial3D_aw6a5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_pyoek")
+}
+autoplay = "life"
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+cast_shadow = 0
+amount = 16
+lifetime = 0.4
+visibility_aabb = AABB(-4, -4, -4, 8, 8, 8)
+mesh = SubResource("SphereMesh_hnt4a")
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+scale_amount_curve = SubResource("Curve_4e8sm")
+color_ramp = SubResource("Gradient_ic2ol")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_vq2ey")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.733333, 0.278431, 1)
+shadow_enabled = true
+shadow_bias = 0.03

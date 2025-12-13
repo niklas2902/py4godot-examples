@@ -1,7 +1,6 @@
 # Truck Town
 
-This is a demo implementing different types of trucks of
-varying complexity using vehicle physics.
+This is a port of the VehicleBody3D from https://github.com/godotengine/godot-demo-projects/tree/master/3d/truck_town
 
 Controls:
 
