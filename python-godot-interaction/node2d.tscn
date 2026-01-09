@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj0oo0jrg53oq"]
+
+[ext_resource type="Script" path="res://pythonnode.py" id="1_ukp1o"]
+[ext_resource type="Script" uid="uid://dh7xidr33s1kg" path="res://Csharpnode.cs" id="1_yiy1w"]
+
+[node name="Node" type="Node"]
+
+[node name="csharpnode" type="Node2D" parent="."]
+script = ExtResource("1_yiy1w")
+
+[node name="Label" type="Label" parent="csharpnode"]
+offset_left = 65.0
+offset_top = 144.0
+offset_right = 1068.0
+offset_bottom = 422.0
+theme_override_font_sizes/font_size = 120
+text = "Label"
+autowrap_mode = 3
+
+[node name="pythonnode" type="Node2D" parent="."]
+script = ExtResource("1_ukp1o")
