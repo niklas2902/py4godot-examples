@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://dako8e30n1vv0"]
+
+[ext_resource type="Script" path="res://game.py" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://cx5dvchcc2v3b" path="res://combat/combat.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dtaj2nc2g4cb8" path="res://grid_movement/exploration.tscn" id="3"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0703125, 0.0703125, 0.0703125, 0), Color(0.0703125, 0.0703125, 0.0703125, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_53g8u"]
+_data = {
+&"fade_to_black": SubResource("1")
+}
+
+[node name="Game" type="Node" node_paths=PackedStringArray("combat_screen", "exploration_screen")]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = ExtResource("1_feb5d")
+combat_screen = NodePath("Combat")
+exploration_screen = NodePath("Exploration")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_53g8u")
+}
+
+[node name="Transition" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color(0.0703125, 0.0703125, 0.0703125, 0)
+
+[node name="Combat" parent="." instance=ExtResource("2")]
+visible = false
+
+[node name="UI" parent="Combat/CombatCanvas" index="0" node_paths=PackedStringArray("combatants")]
+combatants = NodePath("../../Combatants")
+
+[node name="Exploration" parent="." instance=ExtResource("3")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(640, 360)
+
+[editable path="Combat"]
+[editable path="Exploration"]
