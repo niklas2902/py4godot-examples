@@ -23,8 +23,7 @@ class turn_queue(Node):
 		def on_turn_finished():
 			self.get_next_in_queue()
 			self.play_turn()
-
-		self.active_combatant.get("turn_finished").connect(
+		self.active_combatant.get_pyscript().turn_finished.connect(
 			on_turn_finished,
 			ConnectFlags.CONNECT_ONE_SHOT
 		)
@@ -61,5 +60,5 @@ class turn_queue(Node):
 
 	def _set_active_combatant(self, new_combatant) -> None:
 		self.active_combatant = new_combatant
-		self.active_combatant.set("active", True)
+		self.active_combatant.get_pyscript().set_active(True)
 		self.active_combatant_changed.emit(self.active_combatant)
