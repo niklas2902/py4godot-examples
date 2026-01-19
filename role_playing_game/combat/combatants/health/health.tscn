@@ -1,6 +1,19 @@
 [gd_scene load_steps=2 format=3 uid="uid://18l6nomt2plh"]
 
-[ext_resource type="Script" uid="uid://dnuxdpkv3ckrq" path="res://combat/combatants/health.gd" id="1"]
+[ext_resource type="Script" path="res://combat/combatants/health/health.py" id="1_ydeaj"]
 
 [node name="Health" type="Node"]
-script = ExtResource("1")
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = ExtResource("1_ydeaj")
+life = 0
+max_life = 10
+base_armor = 0
+armor = 0
