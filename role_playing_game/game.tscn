@@ -55,10 +55,63 @@ color = Color(0.0703125, 0.0703125, 0.0703125, 0)
 [node name="Combat" parent="." instance=ExtResource("2")]
 visible = false
 
-[node name="UI" parent="Combat/CombatCanvas" index="0" node_paths=PackedStringArray("combatants")]
-combatants = NodePath("../../Combatants")
-
 [node name="Exploration" parent="." instance=ExtResource("3")]
+
+[node name="Player" parent="Exploration/Grid" index="0"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+use_parent_material = false
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+type = 0
+
+[node name="Opponent" parent="Exploration/Grid" index="1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+use_parent_material = false
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+type = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(640, 360)

@@ -1,5 +1,5 @@
 e910c82af1378a97450e26817c58487e
-::res://::1765657689
+::res://::1769265355
 default_bus_layout.tres::AudioBusLayout::477890278679023650::1764252209::0::1::::<><><>0<>0<><>::
 game.tscn::PackedScene::933478356136776912::1764252209::0::1::::<><><>0<>0<><>::uid://bf8hajxlmh3lw::::res://stage/stage.tscn<>uid://dx000heks00a4::::res://coin/coin.tscn<>uid://4qlk3xltj22q::::res://enemy/enemy.tscn<>uid://c0q5hsswj8dqf::::res://player/player.tscn<>uid://7bwmwbaeosl3::::res://touch_screen_ui/touch_screen_ui.tscn
 icon.webp::CompressedTexture2D::2099538867740397591::1764252209::1765299657::1::::<><><>0<>0<>3bc51b7860133a2a287db0facbf13565<>res://.godot/imported/icon.webp-e94f9a68b0f625a567a797079e4d325f.ctex::
@@ -7,18 +7,17 @@ particle.webp::CompressedTexture2D::3430773657195785748::1764252209::1765299657:
 particle_material.tres::StandardMaterial3D::5130325199718656405::1764252209::0::1::::<><><>0<>0<><>::uid://bo45lucn4nll1::::res://particle.webp
 README.md::TextFile::-1::1765640618::0::1::::<><><>0<>0<><>::
 touch_screen_ui.gd::GDScript::1717503357876056932::1764252209::0::1::::<>CanvasLayer<><>0<>0<><>::
-::res://addons/::1765301011
-::res://addons/py4godot/::1765657357
-dependencies.txt::TextFile::-1::1765657356::0::1::::<><><>0<>0<><>::
-export_py4godot.gd::GDScript::6630240685282376878::1765657356::0::1::::<>EditorExportPlugin<><>0<>1<><>::
-export_py4godot_main.gd::GDScript::1955101835164629503::1765657356::0::1::::<>EditorPlugin<><>0<>1<><>::
-get_pip (1).py::PyScriptExtension::-1::1765657357::0::1::::<><><>0<>0<><>::
-get_pip.py::PyScriptExtension::-1::1765129547::0::1::::<><><>0<>0<><>::
-install_dependencies.py::PyScriptExtension::-1::1765657356::0::1::::<><><>0<>0<><>::
-plugin.cfg::TextFile::-1::1765657356::0::1::::<><><>0<>0<><>::
-python.gdextension::GDExtension::1240768924007202894::1765657356::0::1::::<><><>0<>0<><>::
-Python.svg::CompressedTexture2D::2377332563836913278::1765129547::1765301147::1::::<><><>0<>0<>7277ad90e1c1948f376d4a534bf68c34<>res://.godot/imported/Python.svg-681cb785c113434a7384dcc1fd345d19.ctex::
-::res://addons/py4godot/__pycache__/::1765641487
+::res://addons/::1769264767
+::res://addons/py4godot/::1769264605
+dependencies.txt::TextFile::-1::1769259584::0::1::::<><><>0<>0<><>::
+export_py4godot.gd::GDScript::6781268378977249536::1769259584::0::1::::<>EditorExportPlugin<><>0<>1<><>::
+export_py4godot_main.gd::GDScript::3561600861382269265::1769259584::0::1::::<>EditorPlugin<><>0<>1<><>::
+get_pip.py::PyScriptExtension::-1::1769259584::0::1::::<><><>0<>0<><>::
+install_dependencies.py::PyScriptExtension::-1::1769259584::0::1::::<><><>0<>0<><>::
+plugin.cfg::TextFile::-1::1769259584::0::1::::<><><>0<>0<><>::
+python.gdextension::GDExtension::7154362436212701456::1769259584::0::1::::<><><>0<>0<><>::
+Python.svg::CompressedTexture2D::5647148784892293953::1769259582::1769265358::1::::<><><>0<>0<>53796bbbe8fd35b5b0c75c0785c5ee19<>res://.godot/imported/Python.svg-681cb785c113434a7384dcc1fd345d19.ctex::
+signal_script.py::PyScriptExtension::-1::1769259584::0::1::::<><><>0<>0<><>::
 ::res://coin/::1765640418
 coin.py::PyScriptExtension::-1::1765637352::0::1::::<><><>0<>0<><>::
 coin.tscn::PackedScene::8826777842594414889::1765636957::0::1::::<><><>0<>0<><>::res://coin/coin.py<>uid://bfv4s1m7io5gv::::res://coin/sound_coin.wav<>uid://cbwaw7tk7x7pq::::res://coin/coin_material.tres<>uid://bo45lucn4nll1::::res://particle.webp
