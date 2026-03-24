@@ -1,0 +1,106 @@
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://c5h87851xphsn"]
+
+[ext_resource type="FontFile" uid="uid://i8c22b46i8ce" path="res://theme/fonts/montserrat_extra_bold_32.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://67cso0mjasql" path="res://theme/images/button_rect.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bj6e202nbsfhg" path="res://theme/images/button_rect_pressed.png" id="3"]
+[ext_resource type="FontFile" uid="uid://cisuxx73mkmu" path="res://theme/fonts/montserrat_extra_bold_24.tres" id="4"]
+[ext_resource type="Texture2D" uid="uid://bacvua5pakd5r" path="res://theme/images/panel_rect.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cnawlv1kp16gy" path="res://theme/images/background.png" id="6"]
+[ext_resource type="StyleBox" uid="uid://cif4l26u8ew13" path="res://theme/foreground_stylebox_red.tres" id="7"]
+[ext_resource type="Texture2D" uid="uid://by0gwntbneaks" path="res://theme/images/title_panel.png" id="8"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+resource_name = "button_focus_style"
+
+[sub_resource type="StyleBoxTexture" id="2"]
+texture = ExtResource("2")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 56.0
+region_rect = Rect2(0, 0, 128, 152)
+
+[sub_resource type="StyleBoxTexture" id="3"]
+texture = ExtResource("2")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 56.0
+region_rect = Rect2(0, 0, 128, 152)
+
+[sub_resource type="StyleBoxTexture" id="4"]
+texture = ExtResource("3")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 56.0
+region_rect = Rect2(0, 0, 128, 152)
+
+[sub_resource type="StyleBoxTexture" id="5"]
+texture = ExtResource("5")
+texture_margin_left = 32.0
+texture_margin_top = 32.0
+texture_margin_right = 32.0
+texture_margin_bottom = 56.0
+region_rect = Rect2(0, 0, 128, 152)
+
+[sub_resource type="StyleBoxTexture" id="6"]
+texture = ExtResource("6")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+region_rect = Rect2(0, 0, 64, 64)
+
+[sub_resource type="StyleBoxTexture" id="7"]
+texture = ExtResource("8")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 32.0
+texture_margin_bottom = 56.0
+region_rect = Rect2(0, 0, 128, 152)
+
+[resource]
+default_font = ExtResource("4")
+default_font_size = 32
+Button/colors/font_color = Color(0.74902, 0.407843, 0, 1)
+Button/colors/font_disabled_color = Color(0.290196, 0.266667, 0.239216, 1)
+Button/colors/font_focus_color = Color(0.564706, 0.231373, 0.0705882, 1)
+Button/colors/font_hover_color = Color(0.984314, 0.490196, 0.25098, 1)
+Button/colors/font_hover_pressed_color = Color(0.984314, 0.490196, 0.25098, 1)
+Button/colors/font_pressed_color = Color(0.984314, 0.490196, 0.25098, 1)
+Button/constants/h_separation = 2
+Button/fonts/font = ExtResource("1")
+Button/styles/disabled = null
+Button/styles/focus = SubResource("1")
+Button/styles/hover = SubResource("2")
+Button/styles/normal = SubResource("3")
+Button/styles/pressed = SubResource("4")
+Label/colors/font_color = Color(0.184314, 0.419608, 0.533333, 1)
+Label/colors/font_shadow_color = Color(1, 0.596078, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 4
+Label/constants/shadow_outline_size = 0
+Label/fonts/font = ExtResource("4")
+Label/styles/normal = null
+Panel/styles/panel = SubResource("5")
+PanelContainer/styles/panel = SubResource("5")
+ProgressBar/colors/font_color = Color(0.941176, 0.941176, 0.941176, 1)
+ProgressBar/fonts/font = ExtResource("4")
+ProgressBar/styles/bg = SubResource("6")
+ProgressBar/styles/fg = ExtResource("7")
+RichTextLabel/colors/default_color = Color(0.184314, 0.419608, 0.533333, 1)
+RichTextLabel/colors/font_selected_color = Color(0.49, 0.49, 0.49, 1)
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/selection_color = Color(0.1, 0.1, 1, 0.8)
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/shadow_offset_x = 1
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/shadow_outline_size = 0
+RichTextLabel/constants/table_h_separation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/styles/focus = null
+RichTextLabel/styles/normal = null
+title_panel/base_type = &"Panel"
+title_panel/styles/panel = SubResource("7")

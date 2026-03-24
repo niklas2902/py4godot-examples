@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://c10fjiuf6t856"]
+
+[ext_resource type="Script" path="res://combat/combatants/combatant.py" id="1_gm1xt"]
+[ext_resource type="Script" path="res://combat/combatants/health/health.py" id="2_gm1xt"]
+[ext_resource type="PackedScene" uid="uid://rdpn3n6t1ita" path="res://combat/combatants/sprites/sprite.tscn" id="3"]
+
+[node name="Combatant" type="Node2D"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = ExtResource("1_gm1xt")
+damage = 2
+active = false
+
+[node name="Health" type="Node" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = ExtResource("2_gm1xt")
+life = 10
+max_life = 10
+base_armor = 0
+armor = 0
+
+[node name="Sprite2D" parent="." instance=ExtResource("3")]
