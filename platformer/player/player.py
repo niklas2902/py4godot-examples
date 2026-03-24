@@ -8,6 +8,7 @@ from py4godot.classes.core import Vector3, Basis, Transform3D
 from py4godot.functions import deg_to_rad, acos, clamp, atan2, sign, cos, sin
 
 def load_scene(path):
+	print("load_scene")
 	return ResourceLoader.instance().load(path)
 
 

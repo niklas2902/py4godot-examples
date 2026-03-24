@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://dako8e30n1vv0"]
+
+[ext_resource type="Script" path="res://game.py" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://cx5dvchcc2v3b" path="res://combat/combat.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dtaj2nc2g4cb8" path="res://grid_movement/exploration.tscn" id="3"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transition/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0703125, 0.0703125, 0.0703125, 0), Color(0.0703125, 0.0703125, 0.0703125, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_53g8u"]
+_data = {
+&"fade_to_black": SubResource("1")
+}
+
+[node name="Game" type="Node" node_paths=PackedStringArray("combat_screen", "exploration_screen")]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = ExtResource("1_feb5d")
+combat_screen = NodePath("Combat")
+exploration_screen = NodePath("Exploration")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_53g8u")
+}
+
+[node name="Transition" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color(0.0703125, 0.0703125, 0.0703125, 0)
+
+[node name="Combat" parent="." instance=ExtResource("2")]
+visible = false
+
+[node name="Exploration" parent="." instance=ExtResource("3")]
+
+[node name="Player" parent="Exploration/Grid" index="0"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+use_parent_material = false
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+type = 0
+
+[node name="Opponent" parent="Exploration/Grid" index="1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+use_parent_material = false
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+type = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(640, 360)
+
+[editable path="Combat"]
+[editable path="Exploration"]
