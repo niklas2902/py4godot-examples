@@ -8,7 +8,7 @@ import platform
 import stat
 
 PY4GODOTPATH = "py4godot_latest/py4godot"
-PYTHON_VERSION = "3.12.4"
+PYTHON_VERSION = "3.14.3"
 def download_and_extract_latest_release(repo_owner, repo_name, download_dir="."):
     """
     Download and extract the latest release from a GitHub repository
@@ -102,7 +102,7 @@ def download_and_extract_latest_release(repo_owner, repo_name, download_dir=".")
 
 def init_projects():
     projects = ["dodge_the_creeps", "heightmap", "button_demo", "python-class-instantiation", "godot-pytorch",
-                "truck_town", "godot-python-interaction", "platformer"]
+                "truck_town", "godot-python-interaction", "platformer", "kinematic_character", "role_playing_game"]
     for project in projects:
         print((f"Copying py4godot into {project}..."))
         copy_py4godot(project)
